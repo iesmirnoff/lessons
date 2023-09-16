@@ -118,6 +118,11 @@ public class LinkedList2
 
         // если _nodeAfter = null
         // добавьте новый элемент первым в списке
+        if (head == null) {
+            head = _nodeToInsert;
+            tail = _nodeToInsert;
+            return;
+        }
         if (_nodeAfter == null) {
             head.prev = _nodeToInsert;
             _nodeToInsert.next = head;
