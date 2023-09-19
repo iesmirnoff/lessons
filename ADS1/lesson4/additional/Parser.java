@@ -29,28 +29,25 @@ public class Parser {
             try {
                 result.push(Integer.parseInt(itm));
             } catch (NumberFormatException e) {
-                switch (itm) {
-                    case "+" -> sum(result);
-                    case "*" -> multiply(result);
-                    case "=" -> {
-                        return result.pop();
-                    }
+                if ("=".equals(itm)) {
+                    return result.pop();
+                } else {
+                    operation(result, itm);
                 }
             }
         }
         return null;
     }
 
-    private static void sum(Stack<Integer> result) {
+    private static void operation(Stack<Integer> result, String operationSign) {
         int val1 = result.pop();
         int val2 = result.pop();
-        result.push(val1 + val2);
-    }
-
-    private static void multiply(Stack<Integer> result) {
-        int val1 = result.pop();
-        int val2 = result.pop();
-        result.push(val1 * val2);
+        switch (operationSign) {
+            case "+" -> result.push(val1 + val2);
+            case "*" -> result.push(val1 * val2);
+            case "-" -> result.push(val1 - val2);
+            case "/" -> result.push(val1 / val2);
+        }
     }
 
     public static class Stack<T> {
