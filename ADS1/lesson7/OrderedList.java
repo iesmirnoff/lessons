@@ -34,27 +34,39 @@ public class OrderedList<T>
             return ((String) v1).trim().compareTo(((String) v2).trim());
         }
 
-        if (v1 instanceof Byte val1 && v2 instanceof Byte val2) {
+        if (v1 instanceof Byte && v2 instanceof Byte) {
+            Byte val1 = (Byte) v1;
+            Byte val2 = (Byte) v2;
             return val1.compareTo(val2);
         }
 
-        if (v1 instanceof Short val1 && v2 instanceof Short val2) {
+        if (v1 instanceof Short && v2 instanceof Short) {
+            Short val1 = (Short) v1;
+            Short val2 = (Short) v2;
             return val1.compareTo(val2);
         }
 
-        if (v1 instanceof Integer val1 && v2 instanceof Integer val2) {
+        if (v1 instanceof Integer && v2 instanceof Integer) {
+            Integer val1 = (Integer) v1;
+            Integer val2 = (Integer) v2;
             return val1.compareTo(val2);
         }
 
-        if (v1 instanceof Long val1 && v2 instanceof Long val2) {
+        if (v1 instanceof Long && v2 instanceof Long) {
+            Long val1 = (Long) v1;
+            Long val2 = (Long) v2;
             return val1.compareTo(val2);
         }
 
-        if (v1 instanceof Float val1 && v2 instanceof Float val2) {
+        if (v1 instanceof Float && v2 instanceof Float) {
+            Float val1 = (Float) v1;
+            Float val2 = (Float) v2;
             return val1.compareTo(val2);
         }
 
-        if (v1 instanceof Double val1 && v2 instanceof Double val2) {
+        if (v1 instanceof Double && v2 instanceof Double) {
+            Double val1 = (Double) v1;
+            Double val2 = (Double) v2;
             return val1.compareTo(val2);
         }
         return 0;
@@ -136,7 +148,7 @@ public class OrderedList<T>
 
     ArrayList<Node<T>> getAll()
     {
-        ArrayList<Node<T>> r = new ArrayList<>();
+        ArrayList<Node<T>> r = new ArrayList<Node<T>>();
         Node<T> node = head;
         while(node != null)
         {
