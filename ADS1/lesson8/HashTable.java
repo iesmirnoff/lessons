@@ -25,7 +25,7 @@ public class HashTable
         if (slots[indexByHash] == null) {
             return indexByHash;
         }
-        if (size % step == 0 || (step % size) == 0) {
+        if (size % step == 0 || step % size == 0) {
             for (int shift = 0; shift < step; shift++) {
                 for (int i = shift; i < size; i += step) {
                     if (slots[i] == null) {
