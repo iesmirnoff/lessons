@@ -17,7 +17,9 @@ class NativeDictionary<T>
 
     public int hashFun(String key)
     {
-        return key.hashCode() % size;
+        int hashCode = key.hashCode();
+        hashCode = hashCode >= 0 ? hashCode : hashCode * -1;
+        return hashCode % size;
     }
 
     public boolean isKey(String key)
